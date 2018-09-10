@@ -14,4 +14,4 @@ const PeopleSchema = new goose.Schema({
 
 
 const Users = goose.model('People', PeopleSchema);
-module.exports = {Users};
+module.exports = Users;
