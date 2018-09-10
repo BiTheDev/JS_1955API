@@ -24,7 +24,7 @@ function home(req, res){
 
 function getUser(req,res){
     console.log("get user route");
-    Users.find({}, function(err,data){
+    Users.find({name : req.params.name}, function(err,data){
         if(err){
             console.log("Can't get user data", err);
             res.json({message : "Error", errpr : err})
