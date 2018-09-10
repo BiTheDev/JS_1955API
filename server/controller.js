@@ -8,18 +8,18 @@ const Users = require("./model.js");
 
 module.exports = {
     home : (res,req) => Users.find({})
-                        .then(data => console.log("root error")||res.json(data))
-                        .catch(errs => console.log("root success")||res.json(errs)),
+                        .then(data => console.log("root success")||res.json(data))
+                        .catch(errs => console.log("root error")||res.json(errs)),
     getUser : (res,req) =>Users.find({_id : req.params.name})
-                        .then(data => console.log("getUser error")||res.json(data))
-                        .catch(errs => console.log("getUser success")||res.json(errs)),
+                        .then(data => console.log("getUser success")||res.json(data))
+                        .catch(errs => console.log("getUser error")||res.json(errs)),
 
     createUser : (res,req) => Users.create({name : req.params.name})
-                                .then(data => console.log("createUser error")||res.json(data))
-                                .catch(errs => console.log("createUser success")||res.json(errs)),
+                                .then(data => console.log("createUser success")||res.json(data))
+                                .catch(errs => console.log("createUser error")||res.json(errs)),
     removeUser : (res,req) => Users.remove({name : req.params.name})
-                                .then(data => console.log("removeUser error")||res.json(data))
-                                .catch(errs => console.log("removeUser success")||res.json(errs))
+                                .then(data => console.log("removeUser success")||res.json(data))
+                                .catch(errs => console.log("removeUser error")||res.json(errs))
                                      
 }
 // function home(req, res){
